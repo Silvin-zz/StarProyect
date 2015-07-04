@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.util.Random;
+
 
 public class Star extends Activity {
 
@@ -98,11 +100,18 @@ public class Star extends Activity {
         Bitmap bm       =  Bitmap.createBitmap(this.container.getWidth(), this.container.getHeight(), Bitmap.Config.ARGB_8888);
         this.canvas     = new Canvas(bm);
         this.container.setImageBitmap(bm);
-        this.pen.setColor(Color.BLUE);
+
+
+
 
         int x           = this.container.getWidth()  /2;
         int y           = this.container.getHeight() /2;
+        Random  ran     = new Random();
+        int red         = ran.nextInt(256);
+        int green       = ran.nextInt(256);
+        int blue        = ran.nextInt(256);
 
+        this.pen.setColor(Color.rgb(red, green, blue));
         this.canvas.drawLine(x, 0, x, this.container.getHeight(), this.pen);
         this.canvas.drawLine(0, y, this.container.getWidth(), y, this.pen);
 
