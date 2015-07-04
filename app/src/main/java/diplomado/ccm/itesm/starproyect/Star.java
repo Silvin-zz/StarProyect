@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 
 public class Star extends Activity {
@@ -23,6 +24,7 @@ public class Star extends Activity {
     private Paint       pen;
     private Canvas      canvas;
     private SeekBar     sbStar;
+    private TextView    tvNumLines;
 
 
     @Override
@@ -46,6 +48,8 @@ public class Star extends Activity {
         this.btnStar.setOnClickListener(listenerBtnStar);
         this.sbStar.setOnSeekBarChangeListener(listenerSbStar);
         this.sbStar.setMax(50);
+        this.tvNumLines = (TextView) findViewById(R.id.textViewStar);
+        this.tvNumLines.setText("3");
 
 
     }
@@ -59,7 +63,8 @@ public class Star extends Activity {
     private View.OnClickListener  listenerBtnStar = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            drawStar(3);  //llamamos al metodo que pinta la estrella
+            drawStar(10);  //llamamos al metodo que pinta la estrella
+            sbStar.setProgress(10);
         }
     };
 
@@ -74,6 +79,7 @@ public class Star extends Activity {
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
             progress = (progress <3)?3:progress;
             drawStar(progress);  //llamamos al metodo que pinta la etrella
+            tvNumLines.setText(String.valueOf(progress));
         }
 
         @Override

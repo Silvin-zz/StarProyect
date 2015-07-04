@@ -18,17 +18,27 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp" />
 
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_below="@+id/buttonStar"
+        android:text="50"
+        android:id="@+id/textViewStar"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"/>
+
+
     <SeekBar
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/seekBarStar"
         android:layout_below="@+id/buttonStar"
-        android:layout_alignLeft="@+id/buttonStar"
-        android:layout_alignStart="@+id/buttonStar"
+        android:layout_toRightOf="@+id/textViewStar"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:max="50"
-        android:layout_marginTop="10dp" />
+         />
 
 
     <ImageView
@@ -41,6 +51,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp" />
+
+
 
 
 </RelativeLayout>
